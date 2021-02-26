@@ -91,19 +91,19 @@ bool Etat3::transition(Automate &automate, Symbole *symbole)
     {
     case PLUS:
         Entier * e = (Entier*) automate.popSymbol();
-        automate.reduction(1, new Entier(e));
+        automate.reduction(1, new Expr(e));
         break;
     case MULT:
         Entier * e = (Entier*) automate.popSymbol();
-        automate.reduction(1, new Entier(e));
+        automate.reduction(1, new Expr(e));
         break;
     case CLOSEPAR:
         Entier * e = (Entier*) automate.popSymbol();
-        automate.reduction(1, new Entier(e));
+        automate.reduction(1, new Expr(e));
         break;
     case FIN:
         Entier * e = (Entier*) automate.popSymbol();
-        automate.reduction(1, new Entier(e));
+        automate.reduction(1, new Expr(e));
         break;
     default:
         automate.decalage(new symbole(ERREUR), NULL);

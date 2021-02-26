@@ -30,7 +30,7 @@ class Entier : public Symbole {
 
 class Expr : public Entier {
    public :
-      Expr(int v):Entier(v) {toExpr();}
+      Expr(Entier* v):Entier(*v) {toExpr();}
       virtual ~Expr() {}
       virtual void Affiche();
 };
