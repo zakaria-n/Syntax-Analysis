@@ -35,6 +35,9 @@ bool Etat0::transition(Automate &automate, Symbole *symbole)
     case OPENPAR:
         automate.decalage(symbole, new Etat2);
         break;
+    case EXPR:
+        automate.decalage(symbole, new Etat1);
+        break;
     default:
         automate.decalage(new symbole(ERREUR), NULL);
         break;
@@ -53,18 +56,34 @@ bool Etat1::transition(Automate &automate, Symbole *symbole)
         automate.decalage(symbole, new Etat5);
         break;
     case FIN:
-        return false;
+        return true;
         break;
     default:
         automate.decalage(new symbole(ERREUR), NULL);
-        return false;
+        break;
     }
+    return false;
 }
 
 bool Etat2::transition(Automate &automate, Symbole *symbole)
 {
+    switch (*symbole)
+    {
+    case INT:
+        automate.decalage(symbole, new Etat3);
+        break;
+    case OPENPAR:
+        automate.decalage(symbole, new Etat2);
+        break;
+    case EXPR:
+        automate.decalage(symbole, new State6);
+        break;
+    default:
+        automate.decalage(new symbole(ERREUR), NULL);
+        break;
+    }
+    return false;
 }
-
 
 bool Etat3::transition(Automate &automate, Symbole *symbole)
 {
