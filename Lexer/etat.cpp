@@ -61,6 +61,11 @@ bool Etat1::transition(Automate &automate, Symbole *symbole)
     }
 }
 
+bool Etat2::transition(Automate &automate, Symbole *symbole)
+{
+}
+
+
 bool Etat3::transition(Automate &automate, Symbole *symbole)
 {
 }
