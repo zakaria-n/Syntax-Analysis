@@ -1,5 +1,20 @@
 #include "lexer.h"
+#include <stack>
 
-// Pile d'états
-// Une instance Lexer
-// Pile symbole
+class Etat;
+class Automate {
+
+    public :
+        void lecture();
+    
+    protected :
+        // Attributs
+        Lexer lexer;
+        stack<Symbole> pileSymboles;
+        stack<Etat> pileEtats;
+
+        // Méthodes
+        void reduction(int n, Symbole * s);
+        void décalage(Symbole * s, Etat * e);
+        
+}
