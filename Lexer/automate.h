@@ -9,12 +9,12 @@ class Automate {
     
     protected :
         // Attributs
-        Lexer lexer;
-        stack<Symbole> pileSymboles;
-        stack<Etat> pileEtats;
+        Lexer* lexer;
+        stack<Symbole*> pileSymboles;
+        stack<Etat*> pileEtats;
 
         // Méthodes
         void reduction(int n, Symbole * s);
-        void décalage(Symbole * s, Etat * e);
+        void decalage(Symbole * s, Etat * e);
         
-}
+};
