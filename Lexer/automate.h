@@ -17,4 +17,4 @@ class Automate {
         void reduction(int n, Symbole * s);
         void decalage(Symbole * s, Etat * e);
         
-}
+};

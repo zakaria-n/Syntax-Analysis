@@ -30,16 +30,24 @@ bool Etat0::transition(Automate & automate, Symbole * symbole)
     switch (*symbole)
     {
     case INT:
-        
+        automate.decalage(symbole, new Etat3());
         break;
-    
+    case OPENPAR:
+        automate.decalage(symbole, new Etat2());
+        break;
     default:
+        automate.decalage(new symbole(ERREUR), NULL);
         break;
     }
+    return false;
 }
 
 bool Etat1::transition(Automate & automate, Symbole * symbole)
 {
+    switch(*symbole)
+    {
+        
+    }
     
 }
 
