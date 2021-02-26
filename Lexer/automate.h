@@ -15,6 +15,6 @@ class Automate {
 
         // Méthodes
         void reduction(int n, Symbole * s);
-        void décalage(Symbole * s, Etat * e);
+        void decalage(Symbole * s, Etat * e);
         
 }

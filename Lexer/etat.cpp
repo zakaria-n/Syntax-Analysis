@@ -1,5 +1,4 @@
 #include "etat.h"
-#include "automate.h"
 #include <iostream>
 
 Etat::Etat() {}
