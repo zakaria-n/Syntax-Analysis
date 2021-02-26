@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -Wall
-EXEC_NAME = exec.exe
+EXEC_NAME = exec
 INCLUDES =
 LIBS =
 OBJ_FILES = lexer.o symbole.o main.o
