@@ -1,4 +1,5 @@
 #include "automate.h"
+#include "etat.h"
 
 void Automate::decalage(Symbole * s, Etat * e) {
     pileSymboles.push(s);

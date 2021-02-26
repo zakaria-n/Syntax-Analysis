@@ -31,8 +31,32 @@ class Entier : public Symbole {
 class Expr : public Symbole {
    public :
       Expr():Symbole(EXPR, false) {}
-      ~Expr() {}
+      virtual ~Expr() {}
       virtual void Affiche();
    protected :
       // eval map
 };
+
+class ExprBin : public Expr {
+   public :
+      ExprBin(Expr * e1, Expr * e2):Expr(), expr1(e1), expr2(e2) {}
+      virtual ~ExprBin() {}
+   protected :
+      Expr * expr1;
+      Expr * expr2;
+};
+
+class ExprPlus : public ExprBin {
+   public :
+      ExprPlus(Expr * e1, Expr * e2):ExprBin(e1,e2), operateur(Symbole(PLUS,true)) {}
+   protected :
+      Symbole operateur;
+};
+
+class ExprMult : public ExprBin {
+   public :
+      ExprPlus(Expr * e1, Expr * e2):ExprBin(e1,e2), operateur(Symbole(MULT,true)) {}
+   protected :
+      Symbole operateur;
+};
+
