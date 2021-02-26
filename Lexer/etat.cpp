@@ -25,15 +25,18 @@ Etat8::Etat8() : Etat("E8") {}
 
 Etat9::Etat9() : Etat("E9") {}
 
-bool Etat0::transition(Automate & automate, Symbole * symbole)
+bool Etat0::transition(Automate &automate, Symbole *symbole)
 {
     switch (*symbole)
     {
     case INT:
-        automate.decalage(symbole, new Etat3());
+        automate.decalage(symbole, new Etat3);
         break;
     case OPENPAR:
-        automate.decalage(symbole, new Etat2());
+        automate.decalage(symbole, new Etat2);
+        break;
+    case EXPR:
+        automate.decalage(symbole, new Etat1);
         break;
     default:
         automate.decalage(new symbole(ERREUR), NULL);
@@ -42,51 +45,74 @@ bool Etat0::transition(Automate & automate, Symbole * symbole)
     return false;
 }
 
-bool Etat1::transition(Automate & automate, Symbole * symbole)
+bool Etat1::transition(Automate &automate, Symbole *symbole)
 {
-    switch(*symbole)
+    switch (*symbole)
     {
-        
+    case PLUS:
+        automate.decalage(symbole, new Etat4);
+        break;
+    case MULT:
+        automate.decalage(symbole, new Etat5);
+        break;
+    case FIN:
+        return true;
+        break;
+    default:
+        automate.decalage(new symbole(ERREUR), NULL);
+        break;
     }
-    
+    return false;
 }
 
-bool Etat3::transition(Automate & automate, Symbole * symbole)
+bool Etat2::transition(Automate &automate, Symbole *symbole)
 {
-    
+    switch (*symbole)
+    {
+    case INT:
+        automate.decalage(symbole, new Etat3);
+        break;
+    case OPENPAR:
+        automate.decalage(symbole, new Etat2);
+        break;
+    case EXPR:
+        automate.decalage(symbole, new State6);
+        break;
+    default:
+        automate.decalage(new symbole(ERREUR), NULL);
+        break;
+    }
+    return false;
 }
 
-bool Etat4::transition(Automate & automate, Symbole * symbole)
+bool Etat3::transition(Automate &automate, Symbole *symbole)
 {
-    
 }
 
-bool Etat5::transition(Automate & automate, Symbole * symbole)
+bool Etat4::transition(Automate &automate, Symbole *symbole)
 {
-    
 }
 
-bool Etat::transition(Automate & automate, Symbole * symbole)
+bool Etat5::transition(Automate &automate, Symbole *symbole)
 {
-    
 }
 
-bool Etat0::transition(Automate & automate, Symbole * symbole)
+bool Etat::transition(Automate &automate, Symbole *symbole)
 {
-    
 }
 
-bool Etat0::transition(Automate & automate, Symbole * symbole)
+bool Etat0::transition(Automate &automate, Symbole *symbole)
 {
-    
 }
 
-bool Etat0::transition(Automate & automate, Symbole * symbole)
+bool Etat0::transition(Automate &automate, Symbole *symbole)
 {
-    
 }
 
-bool Etat0::transition(Automate & automate, Symbole * symbole)
+bool Etat0::transition(Automate &automate, Symbole *symbole)
 {
-    
+}
+
+bool Etat0::transition(Automate &automate, Symbole *symbole)
+{
 }
