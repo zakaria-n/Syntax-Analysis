@@ -9,5 +9,9 @@ void Automate::decalage(Symbole * s, Etat * e) {
 }
 
 void Automate::reduction(int n, Symbole * s) {
-    // TO DO
+    for(int i = 0 ; i<n ; i++) {
+        delete(pileEtats.top());
+        pileEtats.pop();
+    }
+    pileEtats.top()->transition(*this,s);
 }
