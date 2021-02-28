@@ -39,7 +39,7 @@ bool Etat0::transition(Automate &automate, Symbole *symbole)
         automate.decalage(symbole, new Etat1);
         break;
     default:
-        automate.decalage(new symbole(ERREUR), NULL);
+        automate.decalage(new Symbole(ERREUR), NULL);
         break;
     }
     return false;
@@ -59,7 +59,7 @@ bool Etat1::transition(Automate &automate, Symbole *symbole)
         return true;
         break;
     default:
-        automate.decalage(new symbole(ERREUR), NULL);
+        automate.decalage(new Symbole(ERREUR), NULL);
         break;
     }
     return false;
@@ -79,7 +79,7 @@ bool Etat2::transition(Automate &automate, Symbole *symbole)
         automate.decalage(symbole, new Etat6);
         break;
     default:
-        automate.decalage(new symbole(ERREUR), NULL);
+        automate.decalage(new Symbole(ERREUR), NULL);
         break;
     }
     return false;
@@ -106,7 +106,7 @@ bool Etat3::transition(Automate &automate, Symbole *symbole)
         automate.reduction(1, new Expr(e));
         break;
     default:
-        automate.decalage(new symbole(ERREUR), NULL);
+        automate.decalage(new Symbole(ERREUR), NULL);
         break;
     }
     return false;
@@ -126,7 +126,7 @@ bool Etat4::transition(Automate &automate, Symbole *symbole)
         automate.decalage(symbole, new Etat7);
         break;
     default:
-        automate.decalage(new symbole(ERREUR), NULL);
+        automate.decalage(new Symbole(ERREUR), NULL);
         break;
     }
 }
@@ -145,7 +145,7 @@ bool Etat5::transition(Automate &automate, Symbole *symbole)
         automate.decalage(symbole, new Etat8);
         break;
     default:
-        automate.decalage(new symbole(ERREUR), NULL);
+        automate.decalage(new Symbole(ERREUR), NULL);
         break;
     }
 }
@@ -164,7 +164,7 @@ bool Etat6::transition(Automate & automate, Symbole * symbole)
         automate.decalage(symbole, new Etat9);
         break;
     default:
-        automate.decalage(new symbole(ERREUR), NULL);
+        automate.decalage(new Symbole(ERREUR), NULL);
         break;
     }
     return false;
@@ -174,9 +174,6 @@ bool Etat7::transition(Automate & automate, Symbole * symbole)
 {
     switch (*symbole)
     {
-    case INT:
-        automate.decalage(new symbole(ERREUR), NULL);
-        break;
     case PLUS:
         Expr * s1 = (Expr*) automate.popSymbol();
         automate.popAndDestroySymbol();
@@ -185,9 +182,6 @@ bool Etat7::transition(Automate & automate, Symbole * symbole)
         break;
     case MULT:
         automate.decalage(symbole, new Etat5);
-        break;
-    case OPENPAR:
-        automate.decalage(new symbole(ERREUR), NULL);
         break;
     case CLOSEPAR:
         Expr * s3 = (Expr*) automate.popSymbol();
@@ -202,7 +196,7 @@ bool Etat7::transition(Automate & automate, Symbole * symbole)
         automate.reduction(3,new ExprPlus(s5,s6));
         break;
     default:
-        automate.decalage(new symbole(ERREUR), NULL);
+        automate.decalage(new Symbole(ERREUR), NULL);
         break;
     }
     return false;
@@ -237,7 +231,7 @@ bool Etat8::transition(Automate & automate, Symbole * symbole)
         automate.reduction(3,new ExprMult(s7,s8));
         break;
     default:
-        automate.decalage(new symbole(ERREUR), NULL);
+        automate.decalage(new Symbole(ERREUR), NULL);
         break;
     }
     return false;
@@ -272,7 +266,7 @@ bool Etat9::transition(Automate & automate, Symbole * symbole)
         automate.reduction(3,new Expr(s3));
         break;
     default:
-        automate.decalage(new symbole(ERREUR), NULL);
+        automate.decalage(new Symbole(ERREUR), NULL);
         break;
     }
     return false;
