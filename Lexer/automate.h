@@ -8,6 +8,8 @@ class Automate {
         void lecture();
         void reduction(int n, Symbole * s);
         void decalage(Symbole * s, Etat * e);
+        Symbole* popSymbole();
+        void popAndDestroySymbole();
     
     protected :
         // Attributs
