@@ -5,11 +5,15 @@ class Etat;
 class Automate {
 
     public :
+        Automate(string chaine);
+        Automate();
+        virtual ~Automate();
+        void run();
         void lecture();
         void reduction(int n, Symbole * s);
         void decalage(Symbole * s, Etat * e);
-        Symbole* popSymbole();
-        void popAndDestroySymbole();
+        Symbole* popSymbol();
+        void popAndDestroySymbol();
     
     protected :
         // Attributs

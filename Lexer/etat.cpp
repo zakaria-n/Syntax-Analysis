@@ -237,6 +237,7 @@ bool Etat8::transition(Automate & automate, Symbole * symbole)
     return false;
 }
 
+//A revoir
 bool Etat9::transition(Automate & automate, Symbole * symbole)
 {
     switch (*symbole)

@@ -4,6 +4,16 @@
 
 using namespace std;
 
+Automate::Automate(string chaine) {
+    Etat0 * etat0 = new Etat0();
+    pileEtats.push(etat0);
+    this->lexer = new Lexer(chaine);
+}
+
+void Automate::run() {
+    
+}
+
 void Automate::decalage(Symbole * s, Etat * e) {
     pileSymboles.push(s);
     pileEtats.push(e);
