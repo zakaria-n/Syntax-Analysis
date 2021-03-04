@@ -10,10 +10,8 @@ public:
     virtual ~Etat();
     void print() const;
     virtual bool transition(Automate & automate, Symbole * symbole) = 0;
-    virtual int etat();
 protected:
     string name;
-    int numero;
 };
 
 class Etat0 : public Etat 

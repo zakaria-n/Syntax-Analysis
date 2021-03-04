@@ -6,27 +6,26 @@ using namespace std;
 Etat::Etat() {}
 Etat::~Etat() {}
 Etat::Etat(string s) { name = s; numero = -1;}
-int Etat::etat() {return numero;}
 
-Etat0::Etat0() : Etat("E0"), numero(0) {}
+Etat0::Etat0() : Etat("E0") {}
 
-Etat1::Etat1() : Etat("E1"), numero(1) {}
+Etat1::Etat1() : Etat("E1") {}
 
-Etat2::Etat2() : Etat("E2"), numero(2) {}
+Etat2::Etat2() : Etat("E2") {}
 
-Etat3::Etat3() : Etat("E3"), numero(3) {}
+Etat3::Etat3() : Etat("E3") {}
 
-Etat4::Etat4() : Etat("E4"), numero(4) {}
+Etat4::Etat4() : Etat("E4") {}
 
-Etat5::Etat5() : Etat("E5"), numero(5) {}
+Etat5::Etat5() : Etat("E5") {}
 
-Etat6::Etat6() : Etat("E6"), numero(6) {}
+Etat6::Etat6() : Etat("E6") {}
 
-Etat7::Etat7() : Etat("E7"), numero(7) {}
+Etat7::Etat7() : Etat("E7") {}
 
-Etat8::Etat8() : Etat("E8"), numero(8) {}
+Etat8::Etat8() : Etat("E8") {}
 
-Etat9::Etat9() : Etat("E9"), numero(9) {}
+Etat9::Etat9() : Etat("E9") {}
 
 bool Etat0::transition(Automate &automate, Symbole *symbole)
 {
