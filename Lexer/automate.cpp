@@ -18,9 +18,14 @@ void Automate::run() {
         Symbole * s = lexer->Consulter();
         end = pileEtats.top()->transition(*this,s);
     }
-    Expr * expr = (Expr*)(pileSymboles.top());
-    cout << "Valeur de l'expression : ";
-    cout << expr->getValeur() << endl;
+    if(!pileSymboles.top()->estErreur()) {
+        Expr * expr = (Expr*)(pileSymboles.top());
+        cout << "Valeur de l'expression : ";
+        cout << expr->getValeur() << endl;
+    } else {
+        this->affichePile();
+        cout << "Il y'a une erreur dans l'expression. Arrêt de la lecture." << endl;
+    }
 }
 
 void Automate::affichePile() {
@@ -42,9 +47,11 @@ void Automate::affichePile() {
 
 void Automate::decalage(Symbole * s, Etat * e) {
     pileSymboles.push(s);
-    pileEtats.push(e);
-    if(s->estTerminal()) {
-        lexer->Avancer();
+    if(e != NULL) {
+        pileEtats.push(e);
+        if(s->estTerminal()) {
+            lexer->Avancer();
+        }
     }
 }
 

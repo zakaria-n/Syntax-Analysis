@@ -42,6 +42,7 @@ bool Etat0::transition(Automate &automate, Symbole *symbole)
         break;
     default:
         automate.decalage(new Symbole(ERREUR), NULL);
+        return true;
         break;
     }
     return false;
@@ -62,6 +63,7 @@ bool Etat1::transition(Automate &automate, Symbole *symbole)
         break;
     default:
         automate.decalage(new Symbole(ERREUR), NULL);
+        return true;
         break;
     }
     return false;
@@ -82,6 +84,7 @@ bool Etat2::transition(Automate &automate, Symbole *symbole)
         break;
     default:
         automate.decalage(new Symbole(ERREUR), NULL);
+        return true;
         break;
     }
     return false;
@@ -117,6 +120,7 @@ bool Etat3::transition(Automate &automate, Symbole *symbole)
         }
     default:
         automate.decalage(new Symbole(ERREUR), NULL);
+        return true;
         break;
     }
     return false;
@@ -137,6 +141,7 @@ bool Etat4::transition(Automate &automate, Symbole *symbole)
         break;
     default:
         automate.decalage(new Symbole(ERREUR), NULL);
+        return true;
         break;
     }
     return false;
@@ -157,6 +162,7 @@ bool Etat5::transition(Automate &automate, Symbole *symbole)
         break;
     default:
         automate.decalage(new Symbole(ERREUR), NULL);
+        return true;
         break;
     }
     return false;
@@ -177,6 +183,7 @@ bool Etat6::transition(Automate & automate, Symbole * symbole)
         break;
     default:
         automate.decalage(new Symbole(ERREUR), NULL);
+        return true;
         break;
     }
     return false;
@@ -219,6 +226,7 @@ bool Etat7::transition(Automate & automate, Symbole * symbole)
         break;
     default:
         automate.decalage(new Symbole(ERREUR), NULL);
+        return true;
         break;
     }
     return false;
@@ -266,6 +274,7 @@ bool Etat8::transition(Automate & automate, Symbole * symbole)
         }
     default:
         automate.decalage(new Symbole(ERREUR), NULL);
+        return true;
         break;
     }
     return false;
@@ -310,6 +319,7 @@ bool Etat9::transition(Automate & automate, Symbole * symbole)
         }
     default:
         automate.decalage(new Symbole(ERREUR), NULL);
+        return true;
         break;
     }
     return false;
