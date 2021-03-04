@@ -36,16 +36,3 @@ class Expr : public Entier {
       virtual void Affiche();
 };
 
-class ExprPlus : public Expr {
-   public :
-      ExprPlus(Expr* exp1, Expr* exp2);
-      virtual ~ExprPlus() {}
-      virtual void Affiche();
-};
-
-class ExprMult : public Expr {
-   public :
-      ExprMult(Expr* exp1, Expr* exp2);
-      virtual ~ExprMult() {}
-      virtual void Affiche();
-};
