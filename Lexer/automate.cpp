@@ -14,12 +14,30 @@ Automate::Automate(string chaine) {
 void Automate::run() {
     bool end = false;
     while(!end){
+        this->affichePile();
         Symbole * s = lexer->Consulter();
         end = pileEtats.top()->transition(*this,s);
     }
     Expr * expr = (Expr*)(pileSymboles.top());
     cout << "Valeur de l'expression est: ";
     cout << expr->getValeur() << endl;
+}
+
+void Automate::affichePile() {
+	cout << "Symbole" << endl;
+	stack<Symbole*> copy = pileSymboles;
+	while(!copy.empty()){
+	    copy.top()->Affiche();
+	    cout << " ";
+		copy.pop();
+    }
+    cout << endl << "Etat" << endl;
+    stack<Etat*> etats = pileEtats;
+    while(!etats.empty()){
+		cout << typeid(*etats.top()).name() << " ";
+		etats.pop();
+    }
+    cout << endl;
 }
 
 void Automate::decalage(Symbole * s, Etat * e) {

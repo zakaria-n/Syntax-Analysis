@@ -5,7 +5,7 @@ using namespace std;
 
 Etat::Etat() {}
 Etat::~Etat() {}
-Etat::Etat(string s) { name = s; numero = -1;}
+Etat::Etat(string s) { name = s;}
 
 Etat0::Etat0() : Etat("E0") {}
 

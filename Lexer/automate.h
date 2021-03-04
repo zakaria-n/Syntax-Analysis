@@ -8,13 +8,14 @@ class Automate {
 
     public :
         Automate(string chaine);
-        virtual ~Automate();
+        ~Automate(){ }
         void run();
         void lecture();
         void reduction(int n, Symbole * s);
         void decalage(Symbole * s, Etat * e);
         Symbole* popSymbol();
         void popAndDestroySymbol();
+        void affichePile();
     
     protected :
         // Attributs
