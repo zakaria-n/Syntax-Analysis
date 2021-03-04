@@ -1,6 +1,7 @@
+#include <iostream>
 #include "automate.h"
 #include "etat.h"
-#include <iostream>
+
 
 using namespace std;
 
@@ -12,13 +13,13 @@ Automate::Automate(string chaine) {
 
 void Automate::run() {
     bool end = false;
-    string chaine = this->lexer.flux;
     while(!end){
         Symbole * s = lexer->Consulter();
-        end = pileEtats.top->transition(*this,s);
+        end = pileEtats.top()->transition(*this,s);
     }
-    cout << "Valeur de l'expression" << chaine << ": ";
-    cout << pileSymboles.top->valeur << endl;
+    Expr * expr = (Expr*)(pileSymboles.top());
+    cout << "Valeur de l'expression est: ";
+    cout << expr->getValeur() << endl;
 }
 
 void Automate::decalage(Symbole * s, Etat * e) {

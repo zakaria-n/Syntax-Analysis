@@ -1,4 +1,6 @@
+#pragma once
 #include "lexer.h"
+#include "symbole.h"
 #include <stack>
 
 class Etat;
@@ -6,7 +8,6 @@ class Automate {
 
     public :
         Automate(string chaine);
-        Automate();
         virtual ~Automate();
         void run();
         void lecture();
