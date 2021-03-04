@@ -139,6 +139,7 @@ bool Etat4::transition(Automate &automate, Symbole *symbole)
         automate.decalage(new Symbole(ERREUR), NULL);
         break;
     }
+    return false;
 }
 
 bool Etat5::transition(Automate &automate, Symbole *symbole)
@@ -158,6 +159,7 @@ bool Etat5::transition(Automate &automate, Symbole *symbole)
         automate.decalage(new Symbole(ERREUR), NULL);
         break;
     }
+    return false;
 }
 
 bool Etat6::transition(Automate & automate, Symbole * symbole)

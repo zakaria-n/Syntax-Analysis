@@ -37,7 +37,7 @@ void Automate::affichePile() {
 		cout << typeid(*etats.top()).name() << " ";
 		etats.pop();
     }
-    cout << endl;
+    cout << endl << endl;
 }
 
 void Automate::decalage(Symbole * s, Etat * e) {
