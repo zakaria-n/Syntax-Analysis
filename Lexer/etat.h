@@ -13,6 +13,7 @@ public:
     virtual int etat();
 protected:
     string name;
+    int numero;
 };
 
 class Etat0 : public Etat 
