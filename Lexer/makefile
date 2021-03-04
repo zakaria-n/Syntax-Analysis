@@ -3,7 +3,7 @@ CFLAGS = -Wall
 EXEC_NAME = exec
 INCLUDES =
 LIBS =
-OBJ_FILES = lexer.o symbole.o main.o
+OBJ_FILES = lexer.o symbole.o main.o etat.o automate.o
 
 all : $(EXEC_NAME)
 

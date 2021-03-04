@@ -1,14 +1,16 @@
+#pragma once
 #include "automate.h"
+#include "symbole.h"
 
 class Etat
 {
 public:
     Etat();
-    Etat (string name);
+    Etat (string s);
     virtual ~Etat();
     void print() const;
     virtual bool transition(Automate & automate, Symbole * symbole) = 0;
-    virtual int etat();
+    string getName() {return name;}
 protected:
     string name;
 };

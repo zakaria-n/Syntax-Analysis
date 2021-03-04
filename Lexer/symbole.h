@@ -14,6 +14,7 @@ class Symbole {
       operator int() const { return ident; }
       virtual void Affiche();
       bool estTerminal() {return ident != EXPR;}
+      bool estErreur() {return ident == ERREUR;}
       void toExpr() {ident = EXPR;};
    protected:
       int ident;
@@ -24,6 +25,7 @@ class Entier : public Symbole {
       Entier(int v) : Symbole(INT), valeur(v) { }
       ~Entier() { }
       virtual void Affiche();
+      int getValeur();
    protected:
       int valeur;
 };
@@ -32,5 +34,5 @@ class Expr : public Entier {
    public :
       Expr(Entier* v):Entier(*v) {toExpr();}
       virtual ~Expr() {}
-      virtual void Affiche();
 };
+
