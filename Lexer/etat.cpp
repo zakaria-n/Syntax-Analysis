@@ -8,24 +8,25 @@ Etat::~Etat() {}
 Etat::Etat(string s) { name = s; }
 
 Etat0::Etat0() : Etat("E0") {}
-
+Etat0::etat() {return 0;}
 Etat1::Etat1() : Etat("E1") {}
-
+Etat1::etat() {return 1;}
 Etat2::Etat2() : Etat("E2") {}
-
+Etat2::etat() {return 2;}
 Etat3::Etat3() : Etat("E3") {}
-
+Etat3::etat() {return 3;}
 Etat4::Etat4() : Etat("E4") {}
-
+Etat4::etat() {return 4;}
 Etat5::Etat5() : Etat("E5") {}
-
+Etat5::etat() {return 5;}
 Etat6::Etat6() : Etat("E6") {}
-
+Etat6::etat() {return 6;}
 Etat7::Etat7() : Etat("E7") {}
-
+Etat7::etat() {return 7;}
 Etat8::Etat8() : Etat("E8") {}
-
+Etat8::etat() {return 8;}
 Etat9::Etat9() : Etat("E9") {}
+Etat9::etat() {return 9;}
 
 bool Etat0::transition(Automate &automate, Symbole *symbole)
 {
