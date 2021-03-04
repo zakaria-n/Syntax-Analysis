@@ -37,5 +37,14 @@ class Expr : public Entier {
 
 class ExprPlus : public Expr {
    public :
-      ExprPlus(Expr* exp1, Expr* exp2)
+      ExprPlus(Expr* exp1, Expr* exp2):Entier(exp1->valeur+exp2->valeur) {toExpr();}
+      virtual ~ExprPlus() {}
+      virtual void Affiche();
+}
+
+class ExprMult : public Expr {
+   public :
+      ExprMult(Expr* exp1, Expr* exp2):Entier(exp1->valeur*exp2->valeur) {toExpr();}
+      virtual ~ExprMult() {}
+      virtual void Affiche();
 }
