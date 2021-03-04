@@ -24,6 +24,7 @@ class Entier : public Symbole {
       Entier(int v) : Symbole(INT), valeur(v) { }
       ~Entier() { }
       virtual void Affiche();
+      int getValeur();
    protected:
       int valeur;
 };
@@ -37,14 +38,14 @@ class Expr : public Entier {
 
 class ExprPlus : public Expr {
    public :
-      ExprPlus(Expr* exp1, Expr* exp2):Entier(exp1->valeur+exp2->valeur) {toExpr();}
+      ExprPlus(Expr* exp1, Expr* exp2);
       virtual ~ExprPlus() {}
       virtual void Affiche();
-}
+};
 
 class ExprMult : public Expr {
    public :
-      ExprMult(Expr* exp1, Expr* exp2):Entier(exp1->valeur*exp2->valeur) {toExpr();}
+      ExprMult(Expr* exp1, Expr* exp2);
       virtual ~ExprMult() {}
       virtual void Affiche();
-}
+};
