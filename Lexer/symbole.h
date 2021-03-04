@@ -33,6 +33,5 @@ class Expr : public Entier {
    public :
       Expr(Entier* v):Entier(*v) {toExpr();}
       virtual ~Expr() {}
-      virtual void Affiche();
 };
 

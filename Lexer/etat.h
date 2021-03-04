@@ -10,6 +10,7 @@ public:
     virtual ~Etat();
     void print() const;
     virtual bool transition(Automate & automate, Symbole * symbole) = 0;
+    string getName() {return name;}
 protected:
     string name;
 };

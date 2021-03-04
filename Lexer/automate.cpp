@@ -19,22 +19,22 @@ void Automate::run() {
         end = pileEtats.top()->transition(*this,s);
     }
     Expr * expr = (Expr*)(pileSymboles.top());
-    cout << "Valeur de l'expression est: ";
+    cout << "Valeur de l'expression : ";
     cout << expr->getValeur() << endl;
 }
 
 void Automate::affichePile() {
-	cout << "Symbole" << endl;
+	cout << "Pile des symboles : " << endl;
 	stack<Symbole*> copy = pileSymboles;
 	while(!copy.empty()){
 	    copy.top()->Affiche();
 	    cout << " ";
 		copy.pop();
     }
-    cout << endl << "Etat" << endl;
+    cout << endl << "Pile des états : " << endl;
     stack<Etat*> etats = pileEtats;
     while(!etats.empty()){
-		cout << typeid(*etats.top()).name() << " ";
+		cout << etats.top()->getName() << " ";
 		etats.pop();
     }
     cout << endl << endl;
